@@ -1,6 +1,6 @@
 
 
-$('p','h3').html(function (i, html) {
+$('p').html(function (i, html) {
     var outputHTML = "";
     var insideTag = false;
     var chars = $.trim(html).split("");

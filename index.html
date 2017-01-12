@@ -155,6 +155,10 @@ h4 { font-weight: 500; font-size: 0.8em; margin: 1em 0; padding: 0; margin-top: 
 h4.first { margin-top: 10 }
 h5 { font-weight: 500; font-size: 0.7em; margin: 1em 0; padding: 0;text-align: center;padding: 2em }
 li {text-align: center;padding-top: 2em}
+p{-webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;}
 
 
 
@@ -341,15 +345,16 @@ div.img{
 
 .footnote {
   float: footnote;
-  font-size: 0.8em;
+  font-size: 0.7em;
   footnote-style-position: inside;
   text-indent: 1em;
   color: blue;
 }
 
 .footnote.center {
-  text-align: center;
+  text-align: left;
 }
+
 
 
 
@@ -360,7 +365,8 @@ q.skipendquote:after { content: "" }
 pre { display: none }
 
 @media screen {
-  html { background: #eee; margin: 3em; }
+  html { background: url(brainwebsite-06.png);
+         margin: 3em; }
   body { font: 22px / 1.4 "Radley", serif; letter-spacing: 0; word-spacing: 0 }
   section { 
     padding: 1.5em;
@@ -371,10 +377,19 @@ pre { display: none }
     border-style: solid;
     border-color: #ff0000 #0000ff;
     }
-  img {
-   max-width: 100% !important;
-   margin: none;
-   height: 200px;
+  
+
+  }
+  .hyphenate {
+ -ms-word-break: break-all;
+     word-break: break-all;
+
+     // Non standard for webkit
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
   }
 
@@ -437,27 +452,38 @@ Neuroaesthetics is a quite new but rapidly growing field. I want to take a look 
 <header>Neuroaesthteics</header>
 <hr class="double">
 <div id="toc-container"><h5 class="toc-summary"><a href="#hs0">
-<p>History of neuroaesthtics</p>
+<p>Introduction</p>
 <q>Aesthetics is for the artist as Ornithology is for the birds.</q>
 - Barnett Newman
+
+
 </a></h5><h5 class="toc-summary"><a href="#hs1">
 <p>History of neuroaesthtics</p>
-Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questionsand concepts that characterize neuroaesthetics.
+<p>Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questionsand concepts that characterize neuroaesthetics.</p>
+
+<p>2.1 Fechner's aesthetics "from below"</p>
+<p>2.2 The contribution of Gestalt psychology</p>
+<p>2.3 Berlyne's psychobiological framework</p>
+
 </a></h5><h5 class="toc-summary"><a href="#hs2">
+
 <p>Pioneers of Neuroaesthetics</p>
-The neuroscienctists Semir Zeki and V.S. Ramachandras are the pioneers of contemporary
-neuroaesthetics and are therefore seen as leaders in discussions around this topic. In this chapter I will provide an overview of their theories and most important statements.
+<p>The neuroscienctists Semir Zeki and V.S. Ramachandras are the pioneers of contemporary
+neuroaesthetics and are therefore seen as leaders in discussions around this topic. In this chapter I will provide an overview of their theories and most important statements.</p>
+<p>3.1 Zeki</p>
+<p>3.2 V.S.Ramachandra</p>
+
 </a></h5><h5 class="toc-summary"><a href="#hs3">
 <p>Study Lab Examples </p>
-In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed. They try to provide a better understanding of an emotional aesthetic experience. This understanding could be useful to explain what the "sublime", and emotional experience in the context of aesthetics, is. Most of these studies employed imaging techniques in order to define regional brain activity. Magnetic resonance imaging (MRI) provides imaging information without exposing the object to any radiation. Therefor no health risks are associated with investigations employing MRI;
+<p>In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed. They try to provide a better understanding of an emotional aesthetic experience. This understanding could be useful to explain what the "sublime", and emotional experience in the context of aesthetics, is. Most of these studies employed imaging techniques in order to define regional brain activity. Magnetic resonance imaging (MRI) provides imaging information without exposing the object to any radiation. Therefor no health risks are associated with investigations employing MRI;</p>
 </a></h5><h5 class="toc-summary"><a href="#hs4">
 <p>Neuroaesthetical Art Analysis (Olafur Eliasson)</p>
-After writing about the scientific part of neuroaesthetic I would like to introduce works by
+<p>After writing about the scientific part of neuroaesthetic I would like to introduce works by
 the artist Olafur Eliasson which can be described as nuroaesthetical artworks. I will examen
 two of his installation and explain how these generate knowledge and how he consciously
-works in the field of neuroaesthetics.
+works in the field of neuroaesthetics.</p>
 </a></h5><h5 class="toc-summary"><a href="#hs5">
-conclusion 
+<p>Conclusion</p>
 </a></h5></div>
 </section>
 
@@ -479,7 +505,7 @@ conclusion
     <h3>Chapter 1</h3>
   </header>
 
-  <p id="hs0">
+  <p id="hs1">
   Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questions and concepts that characterize neuroaesthetics. 
   </p>
 
@@ -508,7 +534,7 @@ Empirical and experimental aesthetics are defined as a branches of psychology de
 </p>
 
 <p>There are three important aspects of neuroaesthetics which I will write about:
-  <uL>
+  <uL style="center">
     <ol>1. The pioneering work of Fechner (1876)</ol>
     <ol>2. The contribution of the Gestalt </ol>
     <ol>3. The work of Berlyne (1971, 1974)</ol>
@@ -578,7 +604,7 @@ Human Evolution and Cognition (IFISC-CSIC) and Department of Psychology Universi
   </header>
 
 
-<p id="hs1">
+<p id="hs2">
 The neuroscienctists Semir Zeki and V.S. Ramachandras are the pioneers of contemporary neuroaesthetics and are therefore seen as leaders in discussions around this topic. In this chapter I will provide an overview of their theories and most important statements.
 </p>
 
@@ -702,7 +728,7 @@ In this respect the human brain is absolutely unique – as symbiotic with cultu
 
 
 
-<p id="hs2">
+<p id="hs3">
 In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed. They try to provide a better understanding of an emotional aesthetic experience. This understanding could be useful to explain what the "sublime", and emotional experience in the context of aesthetics, is. Most of these studies employed imaging techniques in order to define regional brain activity. Magnetic resonance imaging (MRI) provides imaging information without exposing the object to any radiation. Therefor no health risks are associated with investigations employing MRI;
 </p><h3>IMAGING STUDIES OF ART</h3>
 
@@ -753,7 +779,7 @@ neuroimaging studies., Neurosci Biobehav Rev. 2016 Jan;60:65-71. doi: 10.1016/j.
     <h3>Chapter 4</h3>
   </header>
 
-<p id="hs3">
+<p id="hs4">
 After writing about the scientific part of neuroaesthetic I would like to introduce works by the artist Olafur Eliasson which can be described as nuroaesthetical artworks. I will examen two of his installation and explain how these generate knowledge and how he consciously works in the field of neuroaesthetics.
 
 </p>
@@ -837,7 +863,7 @@ The nervous system of the viewer underwent physiological shifts. Vivid colors go
   </header>
 
 
-<p id="hs4">
+<p id="hs5">
 
 <span class="firstword">The</span> topic of neuroaesthtetics is not only fascinating for artists but it also opens many new areas of scientific interaction and gives artists a completely new understanding of the impact and importance of their work on human mind. If this increasing neurobiological knowledge has positive or negative impact on art, is difficult to predict. Many recent approaches of modifying visual perception are driven by commercial interests in marketing and have shown to have impact on the behaviour of consumers. In art, analysis of neuraesthetiche is primarily motivated by scientific interests to understand perception of art and creativity. There will be continuing scientific progress, especially in the area of neuroscience. New methods and sophisticated analysis tools using modern data integration and artificial intelligence will revolutionize our understanding of human behavior. All this progress may not necessarily interfere with the individual experience of art, but may lead to increased interdisziplinary exchange of knowledge and new forms of experiencing art. The interdisciplinary challenge for neuroaesthetic researchers working in both neuroscience and art history is to engage in more intense analysis of both disciplinary practices.
 
