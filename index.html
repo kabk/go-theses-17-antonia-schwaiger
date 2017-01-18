@@ -17,15 +17,15 @@
 
     <script src="js/index.js"></script>
     <script src="js/grow.js"></script>
+
+
 <style>
-
-
 
 /* page setup */
 
 @page {
 
-  size: 115mm 200mm;          
+  size: 115mm 200mm;        
   margin: 65mm 45mm;
   marks: crop; 
   font: small-caps 600 1.3em "Adobe Caslon Pro", serif;
@@ -156,11 +156,16 @@ h4 { font-weight: 500; font-size: 0.8em; margin: 1em 0; padding: 0; margin-top: 
 h4.first { margin-top: 10 }
 h5 { font-weight: 500; font-size: 0.7em; margin: 1em 0; padding: 0;text-align: center;padding: 2em }
 li {text-align: center;padding-top: 2em}
-p{-webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  hyphens: auto;}
+p  {-webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;}
 
+
+span {
+  display: inline-block;
+  text-indent: 0;
+}
 
 
 
@@ -285,6 +290,11 @@ p{-webkit-hyphens: auto;
   }
 }
 
+@page:img{
+  size:a4;
+  margin:none;
+}
+
 section.chapter.first { 
   counter-reset: page 1;
   string-set: page-number counter(page, decimal);
@@ -295,10 +305,7 @@ section.chapter {
   page: chapter;
 }
 
-section.chapter header {
-  string-set: an-essay-on-the "an essay on the", principle-of-population "principle of population.";
-  prince-text-replace: none;
-}
+
 
 section.chapter:before { 
   display: block;
@@ -321,9 +328,8 @@ section.first.chapter header {
 
 div.img{
 
-  size:A4;
+  size: A4;
   margin: none;
-
 }
 
 
@@ -366,6 +372,7 @@ q.skipendquote:after { content: "" }
 pre { display: none }
 
 @media screen {
+
   html { background: url(brainwebsite-06.png);
          margin: 3em; }
 
@@ -379,15 +386,15 @@ pre { display: none }
     padding: 1.5em;
     max-width: 40em;
     margin: 1em auto;
-    background: none;
-
+    background: white;
+    opacity: 0.9;
     border-style: solid;
     border-color: #ff9500 #0000ff;
     }
 
 
   }
-  .hyphenate {
+/*  .hyphenate {
  -ms-word-break: break-all;
      word-break: break-all;
 
@@ -397,12 +404,18 @@ pre { display: none }
 -webkit-hyphens: auto;
    -moz-hyphens: auto;
         hyphens: auto;
-}
+}*/
   }
 
   .footnote:before { content: " (" }
   .footnote:after { content: ")" }
 }
+
+span {
+  display: inline-block;
+  text-indent: 0;
+}
+
 </style>
 </head>
 
@@ -482,7 +495,7 @@ neuroaesthetics and are therefore seen as leaders in discussions around this top
 
 </a></h5><h5 class="toc-summary"><a href="#hs3">
 <p>Study Lab Examples </p>
-<p>In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed. They try to provide a better understanding of an emotional aesthetic experience. This understanding could be useful to explain what the "sublime", and emotional experience in the context of aesthetics, is. Most of these studies employed imaging techniques in order to define regional brain activity. Magnetic resonance imaging (MRI) provides imaging information without exposing the object to any radiation. Therefor no health risks are associated with investigations employing MRI;</p>
+<p>In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed.</p>
 </a></h5><h5 class="toc-summary"><a href="#hs4">
 <p>Neuroaesthetical Art Analysis (Olafur Eliasson)</p>
 <p>After writing about the scientific part of neuroaesthetic I would like to introduce works by
@@ -513,12 +526,12 @@ works in the field of neuroaesthetics.</p>
   </header>
 
   <p id="hs1">
-  Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questions and concepts that characterize neuroaesthetics. 
+Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questions and concepts that characterize neuroaesthetics. 
   </p>
 
-  <p><span class="firstword">Neuroaesthetics</span> evolved in the mid 1990s. Based on its interdisciplinary nature, neuroaesthetics integrates various disciplines such as psychology, neuroscience and philosophical aesthetics. Neuroaesthetics is based on methods of empirical and experimental aesthetics. Empirical and experimental aesthetics are defined as a branches of psychology dedicated to studying the nature of beauty, aesthetics, artistic production, and individual audience responses to artworks in a broad range of media.<span class="footnote">(Empirical Aesthetics William Seeley, Bates College)( The Oxford Encyclopedia of Aesthetics, 2nd Edition(ed.MichaelKelly)</span></p>
+<p><span class="firstword">Neuroaesthetics</span> evolved in the mid 1990s. Based on its interdisciplinary nature, neuroaesthetics integrates various disciplines such as psychology, neuroscience and philosophical aesthetics. Neuroaesthetics is based on methods of empirical and experimental aesthetics. Empirical and experimental aesthetics are defined as a branches of psychology dedicated to studying the nature of beauty, aesthetics, artistic production, and individual audience responses to artworks in a broad range of media.<span class="footnote">(Empirical Aesthetics William Seeley, Bates College)( The Oxford Encyclopedia of Aesthetics, 2nd Edition(ed.MichaelKelly)</span></p>
 
-  <p>A"big issue" in neuroaesthetics refers to the characterization of neural processes which give rise to aesthetic experiences. In order to do that I want to look at the classical dichotomy in aesthetics, which reflects critically issues of formalism.</p>
+<p>A"big issue" in neuroaesthetics refers to the characterization of neural processes which give rise to aesthetic experiences. In order to do that I want to look at the classical dichotomy in aesthetics, which reflects critically issues of formalism.</p>
 
 <p>
 <span class="firstword">Aesthetics:</span> <q>Encompass the perception, production, and response to art, as well as interactions with objects and scenes that evoke an intense feeling, often of pleasure
@@ -526,8 +539,8 @@ works in the field of neuroaesthetics.</p>
 
 <p>
 
-<span class="firstword">Neuroscience:</span> <q>Neuroscience is the study of the nervous system -- including the brain, the spinal cord, and networks of sensory nerve cells, or neurons, throughout the body 
-<span class="footnote">-Society for Neuroscience-</span> </q></p>
+<span class="firstword">Neuroscience:</span><q>Neuroscience is the study of the nervous system -- including the brain, the spinal cord, and networks of sensory nerve cells, or neurons, throughout the body 
+<span class="footnote">-Society for Neuroscience-</span></q></p>
 
 
 <p> Neuroaesthetics evolved in the mid 1990s. Based on its interdisciplinary nature, neuroaesthetics integrates various disciplines such as psychology, neuroscience and philosophical aesthetics. Neuroaesthetics is based on methods of empirical and experimental aesthetics. 
@@ -648,9 +661,9 @@ Zeki has emphasized the active character of vision as the most important process
 
 <ol>1. Constancy:</ol>
 
-  <p>
-  Despite the changes that occur when processing visual stimuli (distance, viewing angle, illumination, etc.), the brain has the unique ability to retain knowledge of constant and essential properties of an object and discard irrelevant dynamic properties. This applies not only to the ability to always see a banana as yellow but also the recognition of faces at varying angles.Comparatively, a work of art captures the essence of an object. The creation of art itself may be modeled from this primitive neuronal function. The process of painting for example involves distilling an object down to its "real shape", which may differ from the way the eyes see it.
-  </p>
+<p>
+Despite the changes that occur when processing visual stimuli (distance, viewing angle, illumination, etc.), the brain has the unique ability to retain knowledge of constant and essential properties of an object and discard irrelevant dynamic properties. This applies not only to the ability to always see a banana as yellow but also the recognition of faces at varying angles.Comparatively, a work of art captures the essence of an object. The creation of art itself may be modeled from this primitive neuronal function. The process of painting for example involves distilling an object down to its "real shape", which may differ from the way the eyes see it.
+</p>
 
 <ol>2.Abstraction</ol>
 
@@ -877,7 +890,7 @@ The nervous system of the viewer underwent physiological shifts. Vivid colors go
 </p>
 
 <p>
-In this thesis, I discussed how artwork can contribute to the production of neuroaestethic knowledge by creating conscious awareness of normally non- conscious processes of perceptual cognition. Olafur elliasson made visual cognition to the main purpose of his installations. By actively manipulating the viewer's visual system in the safe context of an exhibition space he created awareness of the viewers own perception and knowledge about the restriction of their visual system. He created art works which embedded his audience as active participants. The Artworks create a coproduction of heightened, embodied awareness about the viewers own cognitive process or in other words neuroaestethic knowledge.
+In this thesis, I discussed how artwork can contribute to the production of neuroaestethic knowledge by creating conscious awareness of normally non- conscious processes of perceptual cognition. Olafur elliasson made visual cognition to the main purpose of his installation.By actively manipulating the viewer's visual system in the safe context of an exhibition space he created awareness of the viewers own perception and knowledge about the restriction of their visual system. He created art works which embedded his audience as active participants. The Artworks create a coproduction of heightened, embodied awareness about the viewers own cognitive process or in other words neuroaestethic knowledge.
 
 </p>
 
@@ -935,7 +948,8 @@ function maketoc()
 
 
 
-   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+   <script src="js/jquery.min.js."></script>
+   <script src="js/reset.min"></script>
 
     <script src="js/index.js"></script>
     <script src="js/grow.js"></script>
