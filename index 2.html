@@ -1,0 +1,944 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Neuroaesthetics" content="Neuroaesthtics/History/Art Analysis?">
+
+<meta property="og:title" content="Neuroaesthtics" />
+<meta property="og:image" content="http://kabk.github.io/go-theses-17-antonia-schwaiger/img/1456173679229.jpg" />
+<meta property="dc:creator" content="Antonia Schwaiger"/>
+<meta charset="utf-8"/>
+
+<title>Neuroaesthetics</title>
+
+
+  
+  <script src='js/jquery.min.js'></script>
+  <script src="js/reset.min"></script>
+
+  <script src="js/index.js"></script>
+  <script src="js/grow.js"></script>
+
+
+<style>
+
+@font-face {
+  font-family: "font";
+  src: url(font/Butler_Medium.otf) format("truetype");
+
+/* page setup */
+
+@page {
+
+ size: A4;    
+ margin: 85mm 45mm;
+ marks: crop; 
+ font: small-caps 600 1.3em "Adobe Caslon Pro", serif;
+
+}
+
+
+@footnote {
+  margin: 0.6em 0 0 0;
+  padding: 0.3em 0 0 0;
+  max-height: 8em;
+ }
+
+}
+
+ @top-center {
+  vertical-align: bottom; 
+  padding-bottom: 60mm;
+ }
+}
+
+@page :left {
+ @top-left { 
+  vertical-align: bottom; 
+  padding-bottom: 50mm;
+  content: string(page-number, first-except);
+  letter-spacing: 0.1em;
+  margin-left: -1em;
+  font-size: 0.9em; 
+ }
+}
+
+@page :right {
+ @top-right { 
+  vertical-align: bottom; 
+  padding-bottom: 20mm;
+  content: string(page-number, first-except);
+  letter-spacing: 0.08em;
+  margin-right: -1em;
+  font-size: 0.9em; 
+ }
+}
+
+@page cover {
+ size: A4;     
+}
+
+@page div{
+ margin: none;
+}
+
+
+
+/* general settings */
+
+html, body, section { margin: 0; padding: 0; widows: 2; orphans: 2 }
+
+body { 
+
+ 
+ font: 14pt / 1.4 "Adobe Caslon Pro", serif;
+ word-spacing: 0.044em;
+ letter-spacing: 0.044em;
+
+ hyphens: auto;
+ text-align: justify;
+ counter-reset: chapter;
+ 
+}
+
+section{
+
+ margin-left: 6em;
+ margin-right: 6em;
+ margin-top: 4em;
+}
+
+
+p, blockquote { 
+ text-indent: 1.2em;
+ margin: 1em 0 0;
+}
+
+header + p, p.summary + p { 
+ text-indent: 0 
+}
+
+header + p:first-letter, p.summary + p:first-letter { 
+ font-size: 1.4em;
+ line-height: 0;
+ /* letter-spacing: -0.08em; */
+}
+
+span.firstword {
+ font-variant: small-caps;
+ prince-text-replace: none;
+ letter-spacing: 0.1em;
+}
+
+h3{
+ text-align:center;
+ padding:5mm;
+ font-style: italic;
+
+}
+
+
+
+p.summary {
+ font-size: 0.8em;
+ margin: 1em 0 1em 1em;
+ text-indent: -1.3em;
+ font-style: italic;
+ 
+}
+
+
+section { 
+
+  page-break-after: always;
+  page-break-inside: avoid;
+
+   }
+
+
+
+hr { width: 4em; border: none; border-bottom: 0.2pt solid black; margin: 0.5em auto; background: transparent }
+hr.double { width: 4em; height: 1pt; border-bottom: 0.2pt solid black; border-top: 0.2pt solid black }
+
+/* titlepage */
+
+.titlepage {
+ text-align: center;
+ font-variant: small-caps;
+ prince-text-replace: none;
+ page: cover;
+}
+
+h1 { font-weight: 500; font-size: 1.6em; letter-spacing: 0.1em; margin: 0.7em 0; padding: 0 }
+h2 { font-weight: 500; font-size: 1.05em; font-style: italic; letter-spacing: 0.1em; margin: 0.7em 0; padding: 0 }
+h3 { font-weight: 500; font-size: 1.05em; margin: 1em 0; padding: 0 }
+h4 { font-weight: 500; font-size: 0.8em; margin: 1em 0; padding: 0; margin-top: 0 }
+h4.first { margin-top: 10 }
+h5 { font-weight: 500; font-size: 0.7em; margin: 1em 0; padding: 0;text-align: center;padding: 2em }
+li { text-align: center;padding-top: 2em}
+
+p {-webkit-hyphens: none;
+ -moz-hyphens: none;
+ -ms-hyphens: none;
+ hyphens: auto;}
+
+
+span {
+ display: inline-block;
+ text-indent: 0;
+}
+
+
+
+/* preface */
+
+
+@page preface {
+ @top-center {
+  content: string(preface-header, first-except);
+  vertical-align: bottom; 
+  padding-bottom: 10mm;
+ }
+}
+
+@page preface:right { 
+ @top-right {
+  content: string(roman-page-number, first-except);
+  vertical-align: bottom; 
+  padding-bottom: 10mm;
+ }
+}
+
+@page preface:left { 
+ @top-left {
+  content: string(roman-page-number, first-except);
+  vertical-align: bottom; 
+  padding-bottom: 10mm;
+ }
+}
+
+.preface {
+ counter-reset: page 1;
+ string-set: roman-page-number counter(page, lower-roman);
+ page: preface;
+ word-spacing: 0.05em;
+ letter-spacing: 0.05em;
+}
+
+.preface header {
+ font-size: 1.5em;
+ letter-spacing: 0.1em;
+ margin: 1.5em 0 1.5em;
+ margin: 1.5em 0 1.5em;
+ string-set: preface-header content();
+ font-variant: small-caps;
+ text-align: center;
+}
+
+.preface .date {
+ font-size: 0.8em;
+ text-indent: 1.4em;
+}
+
+/* toc */
+
+.toc {
+ counter-reset: toc-chapter page 1;
+ string-set: roman-page-number counter(page, lower-roman);  /* setting string triggers first-except */
+ page: preface;
+}
+
+.toc header {
+ font-size: 1.5em;
+ letter-spacing: 0.1em;
+ margin: 0.8em 0 0.8em;
+ string-set: preface-header content();
+ font-variant: small-caps;
+ text-align: center;
+}
+
+#toc-container {
+ margin-top: 2.5em;
+}
+
+.toc-summary {
+ font-size: 0.8em;
+ line-height: 1.5;
+ margin: 1em 0 1em 1em;
+ counter-increment: toc-chapter;
+}
+
+.toc-summary:before {
+ content: "CHAP.\A0" counter(toc-chapter, upper-roman) ".";
+ font-style: normal;
+ letter-spacing: 0.1em;
+ text-align: center;
+ display: block;
+ text-indent: 0;
+ font: 600 0.9em "Adobe Caslon Pro", serif;
+ margin: 0.5em 0;
+ page-break-after: avoid; break-after: avoid;
+}
+
+.toc a {
+ text-indent: -1.3em;
+ font-style: italic;
+ color: inherit;
+ text-decoration: none;
+ display: block;
+}
+
+.toc a:after {
+ content: leader(space) "p.\A0" target-counter(attr(href, url), page) ".";
+ font-style: normal;
+ margin-right: -2mm;
+}
+
+/* chapter */
+
+@page chapter:left {
+ @top-center {
+  content: string(an-essay-on-the, first-except);
+  vertical-align: bottom; 
+  padding-bottom: 10mm;
+ }
+}
+
+@page chapter:right {
+ @top-center {
+  content: string(principle-of-population, first-except);
+  vertical-align: bottom; 
+  padding-bottom: 20mm;
+ }
+}
+
+
+
+section.chapter.first { 
+ counter-reset: page 1;
+ string-set: page-number counter(page, decimal);
+}
+
+section.chapter { 
+ counter-increment: chapter;
+ page: chapter;
+}
+
+
+
+section.chapter:before { 
+ display: block;
+ text-transform: uppercase;
+ letter-spacing: 0.13em;
+ content: "chapter" counter(chapter, upper-roman) ".";
+ text-align: center;
+}
+
+section.first.chapter:before { 
+ display: none 
+}
+
+section.first.chapter header {
+ font-size: 0.8em;
+ text-align: center;
+ font-variant: small-caps;
+ prince-text-replace: none;
+}
+
+
+
+
+
+/* footnotes */
+ .footnote {
+    float: footnote;
+   }
+
+::footnote-call {
+ content: "*";
+ font-size: 1.5em;      /* they used big calls */
+ vertical-align: -0.3em;  /* font-specific hack */
+ line-height: 0;
+}
+
+::footnote-marker {
+ content: "*\A0";
+}
+
+.footnote {
+ float: footnote;
+ font-size: 0.7em;
+ footnote-style-position:left;
+ text-indent: 1em;
+ color: blue;
+}
+
+.footnote.center {
+ text-align: left;
+}
+
+
+
+
+q:before, blockquote:before, figcaption:before { content: "\201C\A0 " }
+q:after, blockquote:after, figcaption:after { content: "\A0\201D" }
+q.skipendquote:after { content: "" }
+
+pre { display: none }
+
+@media screen {
+
+ html { background: url(brainwebsite-04.png);
+     background-position: fixed;
+     margin: 3em; 
+
+    }
+
+ body { font: 62px / 1.4 "Radley", serif;
+     letter-spacing: 0; 
+     word-spacing: 0 ;
+    
+    }
+
+ section { 
+  padding: 1.5em;
+  max-width: 40em;
+  margin: 1em auto;
+  background: white;
+  opacity: 0.9;
+  border-style: solid;
+  border-color: #00FF00 #0000ff;
+  border-width: 1,5mm;
+  box-shadow: 4mm;
+  }
+ 
+ .hyphenate {
+ -ms-word-break: break-all;
+   word-break: break-all;
+
+   // Non standard for webkit
+   word-break: break-word;
+
+-webkit-hyphens: auto;
+  -moz-hyphens: auto;
+    hyphens: auto;
+}
+ 
+
+ .footnote:before { content: " (" }
+ .footnote:after { content: ")" }
+}
+
+span {
+ display: inline-block;
+ text-indent: 0;
+}
+}
+
+
+</style>
+</head>
+
+<body onload="maketoc()">
+
+<pre>Neuroaesthetics is a quite new but rapidly growing field. I want to take a look at where it comes from, where the field is now, and what lies ahead. It can be characterized as the cognitive neuroscience of aesthetic experience, drawing on long traditions of research in empirical aesthetics on the one hand and cognitive neuroscience on the other. I will provide a short introduction into the field of neuroaesthtics in terms of the history, the pioneers as well as science based study lab examples and the examination of contemporary art installations of Olafur Eliasson, in order to clarify the aim of the field.'Even though neuroaesthtics as a field is very discussed I am convinced that the cognitive neuroscientific approach may develop in a manner that is integral with approaches in the humanities and arts.
+</pre>
+
+<section class="titlepage">
+
+<h4 class="first">a</h4>
+<h1>thesis</h1>
+<h5>on</h5>
+<!-- <h2>Neuroaesthetics</h2>
+
+<h5>as it affects</h5> -->
+
+<h3>Neuroaesthtics</h3>
+
+<!-- <h5>with remarks</h5>
+
+<h4>on the speculations of mr. godwin,</h4>
+
+<h4>m. condorcet,</h4>
+
+<h4>and other writers.</h4> -->
+<hr class="double">
+<h4>Royal Academie of Art, The Hauge</h4>
+
+<h5>Antonia Schwaiger</h5>
+
+<hr>
+<h3>2017</h3
+</section>
+
+
+</section>
+
+<section class="preface">
+
+<header>Abstract</header>
+
+<p><span class="firstword">Neuroaesthetics</span>is a quite new but rapidly growing field. I want to take a look at where it comes from, where the field is now, and what lies ahead. It can be characterized as the cognitive neuroscience of aesthetic experience, drawing on long traditions of research in empirical aesthetics on the one hand and cognitive neuroscience on the other. I will provide a short introduction into the field of neuroaesthtics in terms of the history, the pioneers as well as science based study lab examples and the examination of contemporary art installations of Olafur Eliasson, in order to clarify the aim of the field. Even though neuroaesthtics as a field is very discussed I am convinced that the cognitive neuroscientific approach may develop in a manner that is integral with approaches in the humanities and arts.
+</p>
+<p class="date">
+7 January, 2017.
+</p>
+
+</section>
+
+<section class="toc">
+<header>Neuroaesthteics</header>
+<hr class="double">
+<div id="toc-container"><h5 class="toc-summary"><a href="#hs0">
+<p>Introduction</p>
+<q>Aesthetics is for the artist as Ornithology is for the birds.</q>
+<p>- Barnett Newman</p>
+
+
+</a></h5><h5 class="toc-summary"><a href="#hs1">
+<p>History of neuroaesthtics</p>
+<p>Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questionsand concepts that characterize neuroaesthetics.</p>
+
+<p>2.1 Fechner's aesthetics "from below"</p>
+<p>2.2 The contribution of Gestalt psychology</p>
+<p>2.3 Berlyne's psychobiological framework</p>
+
+</a></h5><h5 class="toc-summary"><a href="#hs2">
+
+<p>Pioneers of Neuroaesthetics</p>
+<p>The neuroscienctists Semir Zeki and V.S. Ramachandras are the pioneers of contemporary
+neuroaesthetics and are therefore seen as leaders in discussions around this topic. In this chapter I will provide an overview of their theories and most important statements.</p>
+<p>3.1 Zeki</p>
+<p>3.2 V.S.Ramachandra</p>
+
+</a></h5><h5 class="toc-summary"><a href="#hs3">
+<p>Study Lab Examples </p>
+<p>In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed.</p>
+</a></h5><h5 class="toc-summary"><a href="#hs4">
+<p>Neuroaesthetical Art Analysis (Olafur Eliasson)</p>
+<p>After writing about the scientific part of neuroaesthetic I would like to introduce works by
+the artist Olafur Eliasson which can be described as nuroaesthetical artworks. I will examen
+two of his installation and explain how these generate knowledge and how he consciously
+works in the field of neuroaesthetics.</p>
+</a></h5><h5 class="toc-summary"><a href="#hs5">
+<p>Conclusion</p>
+</a></h5></div>
+</section>
+
+<div class="img">
+<section class="img">
+<img src="img/brainwebsite-01.png" style="width:100%;height:100%;">
+</section>
+</div>
+
+
+
+<section class="first chapter">
+ <header>
+  <h4 class="first">The</h4>
+  <h1>History</h1>
+  <h4>of</h4>
+  <h2>Neuroaesthetics</h2>
+  <hr class="double">
+  <h3>Chapter 1</h3>
+ </header>
+
+<p id="hs1">
+Neuroaesthetics can be seen as general study of aesthetics as a biological phenomenon of human brain function. The basic question of neuroaesthetics is how does art interact with the human brain. A history of neuroaesthetics in a strict sense only spans a little over twenty years. In this chapter I will take a close look at the historical basis which explains current questions and concepts that characterize neuroaesthetics. 
+</p>
+
+<p><span class="firstword">Neuroaesthetics</span> evolved in the mid 1990s. Based on its interdisciplinary nature, neuroaesthetics integrates various disciplines such as psychology, neuroscience and philosophical aesthetics. Neuroaesthetics is based on methods of empirical and experimental aesthetics. Empirical and experimental aesthetics are defined as a branches of psychology dedicated to studying the nature of beauty, aesthetics, artistic production, and individual audience responses to artworks in a broad range of media.<span class="footnote">(Empirical Aesthetics William Seeley, Bates College)( The Oxford Encyclopedia of Aesthetics, 2nd Edition(ed.MichaelKelly)</span></p>
+
+<p>A"big issue" in neuroaesthetics refers to the characterization of neural processes which give rise to aesthetic experiences. In order to do that I want to look at the classical dichotomy in aesthetics, which reflects critically issues of formalism.</p>
+
+<p>
+<span class="firstword">Aesthetics:</span> <q>Encompass the perception, production, and response to art, as well as interactions with objects and scenes that evoke an intense feeling, often of pleasure
+<span class="footnote">- Anjan Chatterjee-</span> </q></p>
+
+<p>
+
+<span class="firstword">Neuroscience:</span><q>Neuroscience is the study of the nervous system -- including the brain, the spinal cord, and networks of sensory nerve cells, or neurons, throughout the body 
+<span class="footnote">-Society for Neuroscience-</span></q></p>
+
+
+<p>Neuroaesthetics evolved in the mid 1990s. Based on its interdisciplinary nature, neuroaesthetics integrates various disciplines such as psychology, neuroscience and philosophical aesthetics. Neuroaesthetics is based on methods of empirical and experimental aesthetics. 
+Empirical and experimental aesthetics are defined as a branches of psychology dedicated to studying the nature of beauty, aesthetics, artistic production, and individual audience responses to artworks in a broad range of media.<span class="footnote">(Empirical Aesthetics William Seeley, Bates College)( The Oxford Encyclopedia of Aesthetics, 2nd Edition(ed.MichaelKelly)</span>
+</p>
+
+<p>Formalism is based on the idea that aesthetic experiences are induced by some formal properties of perceptual stimuli, instead of what they represent, or how they represent its content (how well they resemble what they represent, for mimetic conceptions; how well they express the author's attitude, for expressivist views; etc.).
+</p>
+
+<p>Empiric approaches tend to prefer the former approach, while rationalistic approaches focus on how subjects structure their experience.The historical precedents of neuroaesthetics have consistently adopted a formalist framework, and neuroaesthetics has commonly followed this trend, what does not mean, that a "content" approach would not also be possible, and potentially fruitful.<span class="footnote">INTRODUCTION TO NEUROAESTHETICS Martin Skov and Jon O. Lauring</span>
+</p>
+
+<p>There are three important aspects of neuroaesthetics which I will write about:
+ <uL style="center">
+  <ol>1. The pioneering work of Fechner (1876)</ol>
+  <ol>2. The contribution of the Gestalt </ol>
+  <ol>3. The work of Berlyne (1971, 1974)</ol>
+ </ul>
+</p>
+
+<h3>2.1. Fechner's aesthetics "from below"</h3> 
+<p>In 1879 the philosopher, physicist and experimental psychologist Gustav Theodor Fechner founded the field of experimental aesthetics Fechner most prominent innovation was the collection of information on the reactions of to objects. The methods he established involved participants being asked to use a rating scale to quantify specific aspects of their subjective experience of the presented stimuli</p>
+
+<p>Fechner (1871, 1876) characterized the new proposal as a kind of aesthetics "from below ".He hypothesized, that perception starts with facts in detail and then slowly evolves towards generalization, which was in contrast with the definition of aesthetics by philosophers and art theorists. Fechner's psychophysical knowledge and methods described important additions to contemporary attempts to define how different properties of artworks, designs, and geometrical figures influenced the preferences of the viewer. Size, shape, balance, color, regularity, rhythm and consonance were among the most often cited factors. A great interest through the 19th and 20th century was the study of proportion. Adolf Zeising (1855)<span class="footnote">Zeising, A. (1855) Aesthetische Forschungen, Frankfurt am Main, Meidinger Gohn and Comp.</span>, for instance, believed that the golden section was the basis of all proportionality, a property inherent to everything in the universe, and that it was an essential constituent of beauty in art and nature, including the human body.</p>
+
+<p>Zeising (1854)<span class="footnote">Zeising, A. (1854) Neue Lehre von den Proportionen des menschlichen Körpers, Leipzig, Rudolf Weigel.</span>argued that the golden section regulates the form of flowers, crystals, and many other complex entities based on careful measurements and calculations.</p>
+<p>Beauty is believed to emerge from the presence of certain features of an object, specific proportional relations in this case. Once these characteristics are detected, they are valued as beautiful teristics to evoke aesthetic experiences among their audience.</p>
+
+<p>Because he thought that simple experiments with abstract forms would provide more convincing results, Fechner (1865)<span class="footnote">Fechner, G. T. (1865) Über die Frage des golden Schnitts. Archiv für die zeichnenden Künste, 11, 100-112.</span>performed the first empirical test of the influence of the golden section on people's preference (Berlyne, 1971; Green, 1995)<span class="footnote">Berlyne, D. E. (1971) Aesthetics and Psychobiology, Nueva York, Appleton-Century-Crofts.Green, C. D. (1995) All that glitters: a review of psychological research on the aesthetics of the golden section. Perception, 24, 937-968.</span>, He showed the participants 10 rectangles that varied in proportion from 1:1 to 2.5:1, and then asked them to indicate which one of the rectangles was most pleasing, and which one they found the least pleasing.</p>
+
+<p>The results of this experiment showed, that 34.5% and 35.8% of men and women's choices, respectively, favored the golden section rectangle. It turned out that no one selected it as the least pleasing. (Fechner,1876). This constituted evidence for the argument that certain properties of stimuli – that is to say, objective features – will generally be preferred, liked, or experienced as beautiful.</p>
+
+<h3>2.2. The contribution of Gestalt psychology</h3>
+<p>Gestalt psychologists argued that experience is nothing like a mosaic of discrete and disengaged elements. In their opinion any human experience is a field where parts interact dynamically with each other, and are influenced by the nature of the whole field. Their notion of "field" did not apply only to perceptual experiences; they also used it to explain other psychological phenomena, including memory, learning and education, problem solving, and psychopathology (Hartmann, 1935).<span class="footnote">Marcos Nadal, Alejandro Gálvez and Antoni Gomila. A history for neuroaesthetics Human Evolution and Cognition (IFISC-CSIC) and Department of Psychology University of the Balearic Islands</span>Importantly, from the Gestalt's perspective, perceptual order, organization, form, are the outcome of the subject's interaction with any input. The observer is not regarded as a passive receiver, but as an active organizing person.</p>
+
+<p>The founders of Gestalt psychology, Max Wertheimer, Kurt Koffka, or Wolfgang Köhler, never intended their primary concern to be for aesthetics and art. Anyway, their framework's implications for the appreciation of art and beauty were explored in a lecture delivered by Koffka (1940)<span class="footnote">Koffka, K. (1940) Problems in the psychology of art. Art: A Bryn Mawr Symposium. Bryn Mawr, PA, Bryn Mawr College.</span>and later by psychologists who realized the Gestalt's potential to overcome some of the limitations of empirical aesthetics (Henle, 1961)<span class="footnote">Henle, M. (Ed.) (1961) Documents of Gestalt Psychology, Berkeley and Los Angeles, University of California Press.</span>
+</p>
+
+<p>In the perception of Gestaltists, appreciation of beauty and art emerges from the interaction of the viewer's psychological processes and the artwork's features.</p>
+
+<p>Koffka considered works of art as sgood gestalts", if their constituents are placed in context of the whole experience and that the individual dynamic forces are particularly well balanced. An artwork is appealing as a structure, not as a collection of parts, but as a consistent entity where each constituent requires the others. This structure is in close dynamic interaction with the viewer, who is actively organizing the artwork in one direction, and being affected by it in the other. The spectator's thoughts and feelings are stimulated in an appropriate manner by the artwork.</p>
+
+<p>Principles of the Gestalt theory have been used to support theoretical considerations of the biological basis of our appreciation of art (Ramachandran and Hirstein, 1999)<span class="footnote"> Ramachandran and Hirstein (1999) regard visual artworks as perceptual problems that viewers feel challenged to solve. They posited that perceptual grouping provides essential clues to solve such problems, and that by virtue of hypothesized links between the visual cortex and the limbic system, perceptual grouping may be rewarding, thus contributing to the enjoyment of art.</span>and to analyze the consequences of brain damage on artistic production (Butter, 2004).<span class="footnote">Butter, C. M. (2004) Anton Raederscheidt's distorted self-portraits and their significance for understanding balance in art. Journal of the History of the Neurosciences, 13, 66-78</span>
+</p>
+
+
+
+<h3>2.3. Berlyne's psychobiological framework</h3>
+
+<p>Daniel Berlyne created a broad research program during the 1960s and 1970s, known as psychobiological aesthetics, which represents the starting point for contemporary experimental aesthetics. Its main objective was to identify motivational principles that could explain the preference of people, as well as animals, for certain kinds of stimuli. Its most important contribution was to provide a theoretical foundation that could bring together the existing diverse hypotheses and approaches of aesthetics into a cohesive research program (Crozier, 1980).<span class="footnote">Crozier, J. B. (1980) The new experimental aesthetics - The beginning or the end? Motivation and Emotion, 4, 143-148.
+</span>
+</p>
+
+<p>Based on the neurobiological findings on motivational and emotional systems, Berlyne (1971)<span class="footnote">Berlyne, D. E. (1971)Aesthetics and Psychobiology, Nueva York, Appleton-Century-Crofts.</span>argued that the motivational state of an organism comes out of the activity of three neural systems: a primary reward system, an aversion system, and a secondary reward system, whose activity inhibits the aversion system. The activity of the three systems build upon on the organism's degree of arousal, which in turn depends on the configuration of stimuli from the environment, among other factors. </p>
+
+<p>From this point of view, the hedonic experience induced by a stimulus, defined as the capacity to reward an operant response and to generate preference or pleasure expressed through verbal assessments (Berlyne, 1971), depends on biologic processes that are capable of eliciting and maintaining the organism's current arousal level.</p>
+
+<p>Taking in concern that organisms search for optimization of hedonic values, they will tend to expose themselves to different stimuli as a function of their arousal potential, which in turn is a function of the amount of information transmitted to the organism through psychophysical, ecological and collective variables, such as novelty, surprise, complexity, ambiguity, or asymmetry. In relation to aesthetics and art, Berlyne implied that interest and preference for a given work, whether pictorial or musical, depend primarily on how complex such stimulus appears to the viewer (Berlyne, 1963, Berlyne et al., 1968, Berlyne, 1970). People are expected to prefer intermediate- complex artworks over highly complex or very simple ones, given that they reach an optimal arousal level. It is here where Berlyne's (1971) interactionist perspective is clearer. </p>.
+
+</p>By claiming that it is not the object's inherent characteristics hacomplexity in this case – that influence aesthetic experience, but how the spectator organizes and perceives the object, Berlyne moved away from Zeising and Fechner strict empiricism and acknowledged the active role of the perceiver, as previously emphasized by the Gestalt theory<span class="footnote">With regards to the interactive nature of complexity and other collative variables, Berlyne (1971) believed that "The collative variables are actually subjective, in the sense that they depend on the relations between physical and statistical properties of stimulus objects and processes within the organism. A pattern can be more novel, complex, or ambiguous for one person than for another or, for the same person, at one time than at another. Nevertheless, many experiments, using rating scales and other techniques, have confirmed that collative properties and subjective informational variables tend, as one would expect, to vary concomitantly with the corresponding objective measures of classical information theory" (Berlyne, 1971, p. 9).</span></p>
+
+<p>Berlyne's work is based on Fechner's most thorough methodological and theoretical contributions and provided the necessary theoretical framework at the intersection of neurobiology, motivational psychology and information theory.
+</p>
+
+</section>
+
+<section class="img">
+<img src="img/brainwebsite-02.png" style="width:100%;height:100%;">
+</section>
+
+
+<section class="first chapter">
+ <header>
+  <h4 class="first">The</h4>
+  <h1>Pioneers</h1>
+  <h4>of</h4>
+  <h2>Neuroaesthetics</h2>
+  <hr class="double">
+  <h3>Chapter 2</h3>
+ </header>
+
+
+<p id="hs2">
+The neuroscienctists Semir Zeki and V.S. Ramachandras are the pioneers of contemporary neuroaesthetics and are therefore seen as leaders in discussions around this topic. In this chapter I will provide an overview of their theories and most important statements.
+</p>
+
+<h3>3.1 Semir Zeki</h3>
+
+
+<p>
+<span class="firstword">Semir</span> Zeki is professor of neuroaesthetics at the University College London. Focus of his interest and research is the understanding of the visual brain of primates, mainly humans. Since 1994, Zeki has concentrated more closely on the neural basis of aesthetic experience with special emphasis on art and artistic work. He defines his study of neuroaesthtics as "a theory of art that has solid biological foundations" <span class="footnote">Semir Zeki Art and the brain Deadalus, 127:71–103, 1998</span>
+</p>
+
+<p>
+Because of his successful research of regional brain function, with emphasis on the visual cortex in humans, Zeki earned an outstanding reputation in neurobiology. He discovered and localized regions of the visual brain responsible for processing different attributes of visual information and showed that these regions are both processing and perceiving – contrary to earlier assumptions. He refuted the thesis that color is perceived by the brain solely based on its physical attributes (such as wavelength) when he discovered neurons in monkeys which react only to a specific color. Also he showed that different attributes of visual information are forwarded for selective processing with different speed. All these results together suggested that "seeing" is a much more complex process than previously though.The exploration of the visual brain were made possible by new imaging methods. These techniques allowed Zeki to study questions concerning the aesthetical quality of observed information and its processing by the human brain. He concentrated on a study of neural mechanisms of higher cognitive judgments (aesthetic as well as moral)
+<span class="footnote">George D Birkho, Aesthetic Measure, Harvard University Press,1933</span>
+</p>
+
+<blockquote>"All visual art is expressed through the brain and must therefore,
+obey the laws of the brain whether in conception,
+execution or appreciation and no theory of aesthetics that is not substantially based on the
+activity of the brain is ever likely to be complete, let alone profound."<span class="footnote">Semir Zeki, Inner Visions: An Exploration of Art and the Brain, (New York: Oxford University press,1999)</span></blockquote>
+
+<p>Zekis statement, that art must obey the laws of the brain reads as a statement of authority for art analysis based on the privileged position of an established neuroscientist. Taken in context this statement seems to function more as a justification to conduct innovative research within the field of neuroscience rather than an assault on other disciplines. In his book, Inner Visions, Zeki communicated that he is not trying to address art experience comprehensively, and that he will not address emotions through the lens of neuroscience. He is trying to propose a formula for artistic experience based on his own curiosity that motivated him to explore the connections between art and brain function. At the same time, Zekis hypothesis can be understood as an interdisciplinary provocation.The statement that art follows only the laws of neuroscience may be understood as questioning the long history of aesthetics in the humanities.</p>
+
+<p>Zeki's research has always been based to the bottom-up model of consciousness, which is a traditional neuroscience paradigm. He assumes that small regions of the brain - localized networks of neurons- are assigned with transfer of signals upwards through the complex neural system, from the non-conscious zones low in the network towards the higher cognitive areas where the conscious thought occurs.</p>
+
+<h3>Bottom- up model of vision</h3>
+<p>The central hypothesis of this model is that nonconscious processes are the base of conscious processing, and thereby driving the entire system. Zeki has emphasized the active character of vision as the most important process of interacting with the world. He described the brain as actively collecting stimuli and making continuously decisions at the nonconscious and conscious levels.</p>
+
+<p>Later he turned to the analysis of visual processes associated with art, exploiting existing knowledge of neuroscience, to which he has made significant contributions. One example is his speculative theory of micro-consciousness. Zeki describes that certain perceptions such as color, do not require involvement of higher brain areas, such as the cerebral cortex, to become conscious. He suggested that certain points in the synaptic transmission operate as "essential nodes", sites where the sensory information becomes a perception, giving rise to local microconsciounesses.<span class="footnote">Zeki, Splendours and miseries of the brain ,1999, Wellcome Department of Cognitive Neurology, University College London, London WC1E 6BT,UK</span><p/>
+
+<p>By his research on human color perception, Zeki demonstrated that color itself is a construct of complex neuronal processes. He suggests that the human brain functions as an contineous process of interaction. Based on his theory, cognitive and emotional processes of a living organism are defined through continuous interactions of the subject with the environment. Therefore, Zeki proposes that art is an active process and he insists that the artist and the human brain share a common goal; to gather knowledge about the world which he discusses in detail in his excellent publication "Inner Vision: An exploration of art and the brain"</p>
+
+<p>In 2001 Zeki proposes in his publication "Artistic Creativity and the Braintitwo overriding laws of the visual brain function:</p>
+
+<ol>1. Constancy:</ol>
+
+<p>
+Despite the changes that occur when processing visual stimuli (distance, viewing angle, illumination, etc.), the brain has the unique ability to retain knowledge of constant and essential properties of an object and discard irrelevant dynamic properties. This applies not only to the ability to always see a banana as yellow but also the recognition of faces at varying angles.Comparatively, a work of art captures the essence of an object. The creation of art itself may be modeled from this primitive neuronal function. The process of painting for example involves distilling an object down to its "real shape", which may differ from the way the eyes see it.
+</p>
+
+<ol>2.Abstraction</ol>
+
+
+<p>This process refers to an hierarchical concept where a general representation can be applied to many objects allowing the brain to efficiently process visual stimuli. The ability to abstract may have evolved as a necessity due to the limitations of memory. In a way, art externalizes the functions of abstraction usually occurring in the brain. The process of abstraction so far has not yet not intensively researched by cognitive neurobiology.<span class="footnote">Zeki, Semir. (2001). Artistic Creativity and the Brain. Science, 293(5527), 51-52</span></p>
+
+<p>The impressive research work of Zeki can be summarized in following three statements
+
+ <ul>
+
+  <li>All visual art does obey the laws of the visual brain function, whether in conception, in execution or in appreciation;</li>
+  <li>Visual art represents an overall brain function which is an extension of the function of the visual brain regions, to acquire knowledge;</li>
+  <li>Artists are, in a sense, neurologists who copy the functions of the visual brain with techniques that are unique to them.</li>
+ 
+ </ul>
+
+</p>
+
+<h3>V.S. Ramachandra</h3>
+
+<p>V.S. Ramachandran is Director of the Center for Brain and Cognition and Professor of the Psychology Department and Neuroscience Program at the University of California, San Diego, He is also Adjunct Professor of Biology at the Salk Institute. Ramachandrans early work was on visual perception but he is best known for his experiments in behavioral neurology. He has been called The Marco Polo of neuroscience by Richard Dawkins and the modern Paul Broca by Eric Kandel.<p/>
+
+<p>From all his publications I want to discuss one of the his most controversial paper. It represents one of the earliest on the topic of neuroaesthetics and is co-authored by the philosopher William Hirstein. They propose "eight laws of artistic experience". The paper supports the authors' hypothesis that line drawings are more aesthetically compelling than photographs.
+
+</p>
+
+<p>These eight laws, or neuroscientific principles include various aspects of perception such as grouping and binding- the brains tendency to organize random visual data into shapes - contrast extraction- and the brains tendency to focus on edges boundaries rather the surface.This is short summary of these eight laws:
+</p>
+
+<p>1: the peak shift principle deals not only along the form dimension, but also along more abstract dimensions, such as feminine/masculine posture, color (e.g. skin tones) etc. As example, the gull chick responds especially well to a super beak that doesn't resemble a real beak. There may be classes of stimuli that optimally excite neurons that encode primitive forms in the brain, even though it may not be immediately obvious to us what these forms are. </p>
+ 
+ <p> 2: isolating a single cue helps the organism allocate attention to the output of a single module thereby allowing it to more effectively 'enjoy' the peak shift along the dimensions represented in that module. </p>
+ 
+ <p>3: perceptual grouping to delineate figure and back ground may be useful since it allows the organism to discover objects in noisy environments. Principles such as figure–ground delineation, closure and grouping by similarity may lead to a direct aesthetic response because the modules may send their output to the limbic system even before the relevant objects has been completely identified. </p>
+ 
+ <p>4: the extraction of contrast is also reinforcing, since regions of contrast are usually information-rich regions that deserve allocation of attention. Camouflage, in nature, relies partly on this principle. </p>
+ 
+ <p>5: perceptual "problem solving" is also reinforcing. Hence a puzzle picture (or one in which meaning is implied rather than explicit) may paradoxically be more alluring than one in which the message is obvious. There appears to be an element of "peekaboo" in some types of art — thereby ensuring that the visual system 'struggles' for a solution and does not give up too easily. For the same reason, a model whose hips and breasts are about to be revealed is more provocative than one who is completely naked. 
+ 
+ <p>6: The visual system dislikes interpretations which rely on an unique vantage point. Rather it accepts the visual interpretation for which there is an infinite set of viewpoints that could produce the class of retinal images. For example, in a landscape image, it will interpret an object in the foreground as obscuring an object in the background, rather than if the background figure has a piece missin.</p>
+ 
+ <p>7: perhaps most enigmatic is the use of visual "puns" or metaphors in art. Such visual metaphors are probably effective because discovering hidden similarities between superficially dissimilar entities is an essential part of all visual pattern recognition and it would thus make sense that each time such a link is made, a signal is sent to the limbic system. </p>
+ 
+ <p>8: symmetry: Since most biologically important objects, such as predator, prey or mate are symmetrical, it may serve as an early-warning system to grab our attention to facilitate further processing of the symmetrical entity until it is fully recognised. As such, this principle complements the other laws described in this essay; it is geared towards discovering ‘interesting' object-like entities in the world.<span class="footnote">Ramachandran, V. S. and Hirstein, W. (1999) The science of art: A neurological theory of aesthetic experience. Journal of Consciousness Studies, 6, 15-51.</p>
+
+</span>
+</p>
+
+<p>Their publication has been answered by a very negative response from humanitarian intellectuals.
+Art historian Ernst Gombrich published a short and damning response to Ramachandran and Hirstein's suggesting that their universal statements about art were unfounded, that they simply didn't know enough about art to make a convincing argument, suggesting that "even a fleeting visit to one of the great museums might serve to convince the authors that few of the exhibits conform to the laws of art they postulate."" <span class="footnote">E. H. Gombrich, Journal of Consciousness Studies 7 (8-9):8-9 (2000) </span>
+</p>
+
+<p>The professor of aesthetics and philosopher John Hayman, wrote an essay about how Ramachandran and Hirstein had misunderstood the principle of "peak shift" suggesting that it was about sexual attraction and not about art at all. At the same time, he was also critical of Gombrich's response, and explicitly rejecting a "closing of the ranks" of expertise.</p>
+
+<p>In a later book, published in 2011 and written for a popular audience, Ramachandran again raised his set of universal laws of art and the brain, but this time he proposed a caveat.
+</p>
+
+<p>Many cognitive functions that are fundamental to our human way of life are only partly specified by our genes. Nature (genes) and nurture(experience) interact. He states that genes wire up your brain's emotional and cortical circuits to a certain extent and then leave it to faith that the environment will shape yours brain the rest of the way, producing you, the individual.
+</p>
+
+<p>In this respect the human brain is absolutely unique – as symbiotic with culture as a hermit crab is with its shell. While the laws are hardwired, the content is learned.
+</p>
+</section>
+
+<section class="first chapter">
+ <header>
+  <h4 class="first">The</h4>
+  <h1>Studylab examples</h1>
+  <h4>and the</h4>
+  <h2>empirical evidence</h2>
+  <hr class="double">
+  <h3>Chapter 3</h3>
+ </header>
+
+
+
+<p id="hs3">In this chapter I want to review some of the very few labs based studies which have been used art to examine the neuronal bases of aesthetics. While the goals of these studies were similar, their experimental methods differed. They try to provide a better understanding of an emotional aesthetic experience. This understanding could be useful to explain what the "sublime", and emotional experience in the context of aesthetics, is. Most of these studies employed imaging techniques in order to define regional brain activity.Magnetic resonance imaging (MRI) provides imaging information without exposing the object to any radiation. Therefor no health risks are associated with investigations employing MRI;
+</p><h3>IMAGING STUDIES OF ART</h3>
+
+<p><span class="firstword">Imaging</span>does not only allow detailed description of cerebral structures, which is the most commonly used read out in human disease, but provides functional measures of regional blood flow (oxygen delivery) and regional metabolism (energy production) Regional brain function can be estimated by changes in regional perfusion measured by the BOLD effect using magnetic resonance tomography (MRI). This method is currently used as functional MRI (fMRI) to explore regional brain function and its connectivit.Although these methods do not provide mechanistic information, they are used to explore neuronal cognitive function. Regional increase of signal localizes active brain function, which can be correlated to brain anatomy and previous knowledge about regional brain function. Imaging can be repeated easily allowing longitudinal monitoring brain function during specific tasks.
+
+</p>
+
+<p>Kawabata and Zeki (2004)<span class="footnote">Kawabata, H. and Zeki, S. (2004) Neural Correlates of Beauty. Journal of Neurophysiology, 91, 1699-1705.</span>asked participants to rate abstract, still life, landscape, or portraitures paintings weather they were beautiful, neutral, or ugly. They used a fixed-effects analysis in a 3 × 4 factor event-related design with event types segregated as beautiful, neutral, or ugly in one of the four painting categories. The pattern of activity varied within the ventral visual cortex depending on whether subjects were looking at portraits, landscapes, or still-lives. There was greater activity found the in orbito-frontal cortex for beautiful than for ugly or neutral stimuli and they found a stronger activity for beautiful than for neural stimuli in the anterior cingulate and left parietal cortex. The only brain activity in the cortex correlating with beauty of all the painting types was within the orbitofrontal and the authors interpreted this activity as the representation of the neural underpinnings of the aesthetic emotional experience.
+</p>
+
+<p>Another experiment was performed by Vartanian and Goel (2004)<span class="footnote">Oshin Vartanian and Vinod Goel (2004)Neuroanatomical correlates of aesthetic preference for paintings Depar tment of Psychology, York University, Toronto, Ontario</span>They used an fMRI to sudy images of representational and abstract paintings. They observedincrease neuronal activity within the occipital gyri bilaterally and the left anterior cingulate increased with preference ratings. They also found that activity within the right caudate decreased simultaneously to the preference ratings. More activity was evoked within the occipital poles, the presumes, and the posterior middle temporal gyrus by representational paintings than did abstract paintings.
+</p>
+
+<p>By using magnetoencephalography Cela-Conde et al. (2004)<span class="footnote">Cela-Conde C. J., Marty G., Maestu F., Ortiz T., Munar E., Fernandez A., Roca M., Rossello J., Quesney F.(2004) Activation of the prefrontal cortex in the human visual aesthetic perception. PNAS;101(16):6321–25.</span>recorded event potentials as parameters of electrophysiologic activity when participants were looking at images of artworks and photographs. The participants had to judge whether the images they saw were beautiful. This experiment showed that greater neural activity was evoked by beautiful images than not-beautiful images over the left dorsolateral prefrontal cortex with a latency rate of 400–1000 msec. The authors conclude that this region is involved in making aesthetic judgments.
+</p>
+
+<p>A different strategy to investigate the neural correlates of beauty in an fMRI was used by Jacobsen et al. (2005)<span class="footnote">Jacobsen, T., Schubotz, R. I., Höfel, L. and Von Cramon, D. Y. (2006) Brain correlates of aesthetic judgment of beauty. Neuroimage, 29, 276 – 285</span>. Instead of using artwork as their stimuli, a set of geometric shapes were used which were designed in the laboratory. Participants had to distinguish whether they perceived the images as beautiful or as symmetric. This study showed that participants found symmetric patterns more beautiful than non-symmetric ones. Aesthetic judgments more than symmetry judgments activated the medial frontal cortex, the precuneus, and the ventral prefrontal cortex. The left intraparietal sulcus was conjointly active for symmetry and beauty judgments. Activity within orbito-frontal cortex was triggered by the beauty as well as the complexity of the images. In a follow-up study using the same stimuli (Hofel and Jacobsen 2007), they found that beauty generated a lateral positive evoked potential in a temporal window between 360 and 1225 msec. 
+</p>
+
+<p>Another interesting experiment was made by De Tommaso, Sardaro, and Livrea (2008)In this study they evaluated the distractive effect of aesthetic appreciation on subjectively rated pain (visual analogue scale;VAS) and multi-channel evoked potentials induced by CO(2) laser stimulation of the left hand in twelve healthy volunteers. Subjects were stimulated by laser in the absence of other external stimulation (baseline condition) and while looking at different paintings they had previously rated as beautiful, neutral or ugly. The view of paintings previously appreciated as beautiful produced lower pain scores and a clear inhibition of the P2 wave amplitude, localized in the anterior cingulate cortex; the inhibition of P2 wave amplitude was lesser or not significant during the presentation of the ugly or neutral paintings, respectively. Dipole source localization analysis of the LEP peaks showed significant changes during different conditions, with a shift from the posterior to the anterior right cingulated cortex while looking at paintings previously rated as beautiful. The results they provided were evidence that pain may be modulated at cortical level by the aesthetic content of the distracting stimuli. <span class="footnote">M. ToMmaso, M. Sardaro and P. Livrea, Aesthetic value of paintings affects pain thresholds, Consciousness and Cognition 17 (4):1152-1162 (2008)</span>
+</p>
+
+<p>Although there exist many publications cover the area of neuroaesthetics (54 manuscripts, Pubmed 2.1.2017), only few studies can unequivocally localize aesthetic experience associated with specific brain regions. A recent meta-analysis of 47 fMRI experiments published in 14 manuscripts by Boccia et al addressed the question, where brain neural activation does occur in aesthetic responses to visual art.<span class="footnote">Boccia M, Where does brain neural activation in aesthetic responses to visual art occur? Meta-analytic evidence from neuroimaging studies., Neurosci Biobehav Rev. 2016 Jan;60:65-71. doi: 10.1016/j.neubiorev.2015.09.009. Epub 2015 Nov 24.
+</span> </p>
+</section>
+
+
+<section class="img">
+<img src="img/brainwebsite-03.png" style="width:100%;height:100%;">
+</section>
+
+<section class="first chapter">
+ <header>
+  <h4 class="first">A</h4>
+  <h1>Neuroaesthetical</h1>
+  <h4>Art Analysis</h4>
+  <h2>Olafur Eliasson</h2>
+  <hr class="double">
+  <h3>Chapter 4</h3>
+ </header>
+
+<p id="hs4">After writing about the scientific part of neuroaesthetic I would like to introduce works by the artist Olafur Eliasson which can be described as nuroaesthetical artworks. I will examen two of his installation and explain how these generate knowledge and how he consciously works in the field of neuroaesthetics.
+
+</p>
+
+<p><span class="firstword">Venice</span> Biennale 2003. "Room For One Color": I remember entering a room lit through and through with yellow light. The yellow color saturated the space in such a way that every other color in the spectrum seemed to have disappeared. There was no color diffraction left anymore and the only left contrast seemed to be the difference between dark and light. At that time, at the Biennale, I did not know who Olafur Eliasson was and I did not understand the relation to Art in this installation, since the piece contained no objects nor images, consisting only of an empty room saturated with this yellow light, but I still remember the room as well as the impact it had on me. It was something else, compared to what I have seen/experienced in exhibitons before.
+
+
+<p>The artwork itself was not an object and it only manifested itself in the nervous system of every individual viewer. It was the human sense of vision, which Eliasson used as object of the artwork itself. 
+</p>
+
+<p>The light was produced with mono- frequency bulbs with a narrow frequency of light only in the yellow spectrums, so that no other color was visible within the environment. I remember how this unusual light created several optical effects. After images appeared, because the yellow - perceiving receptors in my eyes got worn out; Leaving the yellow room white walls had a purple tint. The pervasive yellow light excluded every other color so everything appeared monotone. Apparently for some people the dampening of color processing meant that the perception of edges, became more exact.
+</p>
+
+<p>Eliasson himself explained the monochrome environment produced "the feeling of having a particularly sharp detection of the space and people around us."<span class="footnote">Olafur Eliasson in an interview with Angela Rosenberg, "Olafur Eliasson — Beyond Nordic Romanticism," Flash Art (May-June 2003)</span>In Eliasson terms there was nothing to see except seeing itself. "Room For One Color" physically triggered the visual systems of beholders in ways that were beyond their control.
+</p>
+
+<p>Another installation which I would have loved to seen is his installation "360 Room Of All Colors" he also presented an "empty" space, which was filled with saturated color that stimulated visual after images.
+</p>
+
+<p>In comparison with "Room For One Color" which was installed as a transitional space filled with ambient light, "360 Room Of All Colors" had more sculptural presence.
+</p>
+
+<p>The set up was a circular chamber (3 m height/ 8 m diameter) standing in the middle of the room. The inside of the chamber was a continuous panoramic wall made of blank projection foil. Behind the foil, banks of fluorescent lights projected a sequence of bright colors, which created a rich glow in the circular space. the projected light shifted through a series of color frequencies over time. Timed in such a way that an after image for each could get established in eyes of spectators before the color would fade into the nest.<span class="footnote">Rafael Tiffany, "Review of Olafur Eliasson's ‘Take Your Time' at the Museum of Modern Art and P.S.1," Rhizome (June 11, 2003), http://rhizome.org/editorial/2008/jun/11/review-of-olafureliassons-quottake-your-timequot-/,(accessed November 15, 2011).</span>
+</p>
+
+<p>As Eliasson described it, with the blue space you have the orange afterimage and, after fifteen or twenty seconds, the orange afterimage is so strong that this idea of the blue starts to fade to pastel, then slowly working its way toward white. After another ten seconds, the blue doesn't really seem blue to us, it is a mixture of both our afterimage and what we know about what we are looking at. But then, the piece starts to fade into another color, so we are then with "orange eyes" so to speak, and then the piece decides to fade from blue to yellow.<span class="footnote">Olafur Eliasson, "Some Ideas about Colour," in Olafur Eliasson: Your Colour Memory, eds.Ismail Soyugenc and Richard Torchia, exhibition catalogue (Glenside: Arcadia University Art Gallery, 2006), 75.</span>
+</p>
+
+<p>The nervous system of the viewer underwent physiological shifts. Vivid colors got produced that manifested only in the spectator perception. By manipulating the physiology of beholders' visual systems, these works conditioned audiences to see colors and images that did not exist outside their own perceptual experience.
+</p>
+
+<p>One online reviewer, Laura Mott, reported that at Eliasson's SFMOMA (San Francisco Museum of Art) exhibition, people walked through "Room For One Color" quickly in order to "escape its severity". Another reviewer, Katherine Whitney, described her experience in the same piece,…" the light was pure yellow – monochromatic – and it distorted our color perception. We looked at our hands – they look weird and dirty. My dad's face was all blotchy. My daughter's blue shirt looked grey. I looked at a total stranger. He looked back at me. It was our first clue that this will be a different kind of museum experience."<span class="footnote">SALLY MCKAY, REPOSITIONING NEUROAESTHETICS THROUGH CONTEMPORARY ART, January 2014,197</span>
+
+<p>The installation situated the individual bodies/brains of subjects as the material sites where the artwork unfolded. The aesthetics of one's own vision as one's nervous system struggled to contend with odd environments. Each installation was engineered to trigger viewers' bodies to produce specific visual effects. Of course, this can be said about many artworks of visual art. The difference I want to point out is rather then externalizing vision as a set of attributes in artwork, Room for One Color and 360 Room of All Colors internalized vision as a capacity of the body. Also in comparison to an 2d artwork on the wall the spectator is free to look the other way or look at something else. In Eliasson's three dimensional installations the body gets actively tempered with by encompassing the visitor in an environment. it took a physical impact on the visitors body.
+</p>
+
+<p>For Eliasson the viewer experience also had another potential:
+"I find it crucial," he said, "that museums focus on the visitor experience, rather than only on the artworks, to unfold their socializing potential and create an important relation between museums and the society in which they take part."<span class="footnote">Olafur Eliasson, "Some Ideas about Colour," in Olafur Eliasson: Your Colour Memory, eds. Ismail Soyugenc and Richard Torchia, exhibition catalogue (Glenside: Arcadia University Art Gallery, 2006), 72.</span>
+</p>
+
+<p>Eliasson's intstallations show that our vision operates both more automatically ad less reliably than we might have previously thought.
+</p>
+<p>The "most obvious impact of the yellow light," said Eliasson of Room for One Color, "[was] the realization that perception is acquired: the representational filter, or the sudden feeling that our vision simply is not objective, [was] brought to our awareness and with that our ability to see ourselves in a different light."<span class="footnote">Olafur Eliasson, "Some Ideas about Colour," in Olafur Eliasson: Your Colour Memory, eds. Ismail Soyugenc and Richard Torchia, exhibition catalogue (Glenside: Arcadia University Art Gallery, 2006), 65</span></p>
+
+<p>Olafur Elliason also said: "What I look at is ... not only the experiencing of the artwork itself, or the artwork and institution as one, but also – and even more importantly – the ways in which the visitors may experience themselves experiencing the artwork. The audience should, in other words, be encouraged to see themselves both from a third person perspective, that is, from the outside, and from a first-person perspective."<span class="footnote">Olafur Eliasson, "Some Ideas about Colour," in Olafur Eliasson: Your Colour Memory, eds. Ismail Soyugenc and Richard Torchia, exhibition catalogue (Glenside: Arcadia University Art Gallery, 2006), 75.</span></p>
+
+<p>The art historian Claire Bishop wrote about how installation art makes a specific form of subjective. "Rather than imagining the viewer as a pair of disembodied eyes that survey the work from a distance," she suggested, "installation art presupposes an embodied viewer whose senses of touch, smell and sound are as heightened as their sense of vision."<span class="footnote">Claire Bishop, Installation Art (London and New York: Routledge, 2005), 6.
+ </span></p>
+
+<p>Eliassons works directed attention towards visual processes, and therefor, reinforcing Bishop's notion.</p>
+
+<p>Another aspect I want to take a closer look at, is how the context of a museum can help to transport the science of vision out of the lab and make it more receivable for another audience.</p>
+
+<p>Eliasson's museum installations allowed viewers to experience some of the strangeness of their own neurological functions first-hand. Here the kinds of information that scientists produce, about how vision operates, could be manifested by a persons as embodied forms of knowledge. Eliasson created safe environments in which one could explore the own body as an organism potentially vulnerable to scientific manipulation, without the personal stakes of illness and treatment that attend drug trials, diagnostic testing or surgery. </p>
+
+<p>As he suggested,"...the viewer becomes the experiment itself and also experiences being the experiment. It is like being operated on without anesthesia."<span class="footnote">Olafur Eliasson, "Some Ideas about Colour," in Olafur Eliasson: Your Colour Memory, eds.Ismail Soyugenc and Richard Torchia, exhibition catalogue (Glenside: Arcadia University Art Gallery, 2006), 805</span> 
+
+</section>
+
+
+<section class="img">
+<img src="img/brainwebsite-05.png" style="width:100%;height:100%;">
+</section>
+
+<section class="first chapter">
+ <header>
+  <h4 class="first">the</h4>
+  <h1>Conclusion</h1>
+  <!--<h4>Analysis</h4>
+  <h2>Olafur Eliasson</h2>-->
+  <hr class="double">
+  <h3>Chapter 5</h3>
+ </header>
+
+
+<p id="hs5">
+
+<span class="firstword">The</span> topic of neuroaesthtetics is not only fascinating for artists but it also opens many new areas of scientific interaction and gives artists a completely new understanding of the impact and importance of their work on human mind. If this increasing neurobiological knowledge has positive or negative impact on art, is difficult to predict. Many recent approaches of modifying visual perception are driven by commercial interests in marketing and have shown to have impact on the behaviour of consumers. In art, analysis of neuraesthetiche is primarily motivated by scientific interests to understand perception of art and creativity. There will be continuing scientific progress, especially in the area of neuroscience. New methods and sophisticated analysis tools using modern data integration and artificial intelligence will revolutionize our understanding of human behavior. All this progress may not necessarily interfere with the individual experience of art, but may lead to increased interdisziplinary exchange of knowledge and new forms of experiencing art. The interdisciplinary challenge for neuroaesthetic researchers working in both neuroscience and art history is to engage in more intense analysis of both disciplinary practices.
+
+</p>
+
+<p>In this thesis, I discussed how artwork can contribute to the production of neuroaestethic knowledge by creating conscious awareness of normally non- conscious processes of perceptual cognition. Olafur elliasson made visual cognition to the main purpose of his installation.By actively manipulating the viewer's visual system in the safe context of an exhibition space he created awareness of the viewers own perception and knowledge about the restriction of their visual system. He created art works which embedded his audience as active participants. The Artworks create a coproduction of heightened, embodied awareness about the viewers own cognitive process or in other words neuroaestethic knowledge.
+
+</p>
+
+<p>I illustrated only small aspects of the potential which art experience may have within an interdisciplinary neuroaesthetic frame work, but I believe that this increasing knowledge will influence beyond scientific interests the way future scholars of art will be educated.
+</p>
+
+
+</section>
+
+<section class="img">
+<img src="img/brainwebsite-06.png" style="width:100%;height:100%;">
+</section>
+
+
+<script>
+
+function getText(e)
+{
+  var text = "";
+
+  for (var x = e.firstChild; x != null; x = x.nextSibling)
+  {
+	if (x.nodeType == x.TEXT_NODE)
+	{
+	  text += x.data;
+	}
+	else if (x.nodeType == x.ELEMENT_NODE)
+	{
+	  text += getText(x);
+	}
+  }
+
+  return text;
+}
+
+function maketoc()
+{
+  var hs = document.getElementsByClassName("summary");
+  var toc = document.getElementById('toc-container');
+  for(var i=0; i<hs.length; i++)
+  {
+	var a = document.createElement("a");
+    a.innerHTML = hs[i].innerHTML;
+	a.setAttribute("href", "#hs"+i);
+    hs[i].setAttribute("id", "hs"+i);
+    var p = document.createElement("p");
+    p.className = "toc-summary";
+	p.appendChild(a); 
+	toc.appendChild(p); 
+  }
+}
+
+</script>
+
+
+
+ <script src="js/jquery.min.js."></script>
+ <script src="js/reset.min"></script>
+
+ <script src="js/index.js"></script>
+ <script src="js/grow.js"></script>
+
+
+</body></html>

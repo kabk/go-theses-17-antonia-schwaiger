@@ -1,6 +1,6 @@
 
 
-$('p','h3').html(function (i, html) {
+$('p').html(function (i, html) {
     var outputHTML = "";
     var insideTag = false;
     var chars = $.trim(html).split("");
@@ -36,12 +36,12 @@ $('p','h3').html(function (i, html) {
     }
     return outputHTML;
 });
-/*
+
 $('p').html(function (i, html) {
     var chars = $.trim(html).split("\n");
     return '<span>' + chars.join('\n</span><span>') + '</span>';
 });
-*/
+
 
 
 $( "span" ).mouseenter(function(e) {
